@@ -13,32 +13,8 @@ for (i in 1:65){
 }
 
 
-
-filenames=
-  list.files("/Users/jinsf/Documents/paper/rusefulcode/pretem/旱田初略数据/summaries/",
-             pattern="*.txt"   )
-
-f = file.path("/Users/jinsf/Documents/paper/rusefulcode/pretem/旱田初略数据/summaries",filenames)
-
-filenames
-fileorder=seq(3,31,by=2)
-
-file1=read.table(f[1],skip=2)
-
-for (i in fileorder){
-  tem=read.table(f[i],skip=2)
-  file1=rbind(file1,tem)
-}
-
-write.csv(file1,"Dry.csv")
-
-
-
-
-
+# file for time series
 library(lubridate)
-
-
 
 dry=read.csv("rice2.csv")
 dry$V3=ymd(dry$V3)
@@ -86,7 +62,7 @@ ggsave("sun.pdf",height = 10,width = 15, units = "cm")
 
 
 
-
+# Xianwei & Li Here
 filenames=list.files("/Users/jinsf/Documents/paper/rusefulcode/temp/",
                      pattern=NULL)
 f = file.path("/Users/jinsf/Documents/paper/rusefulcode/temp/",
